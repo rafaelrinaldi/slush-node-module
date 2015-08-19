@@ -7,7 +7,7 @@
   "bugs": {
     "url": "https://github.com/<%= authorGitHub %>/<%= moduleName %>/issues"
   },
-  "homepage": "https://github.com/<%= moduleName %>/<%= moduleName %>#readme",
+  "homepage": "https://github.com/<%= authorGitHub %>/<%= moduleName %>#readme",
   "author": {
     "name": "<%= authorName %>",
     "email": "<%= authorEmail %>",
@@ -17,7 +17,7 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "lint": "eslint index.js",
+    "lint": "eslint",
     "test": "npm run lint && tape test.js"
   },
   "files": [
