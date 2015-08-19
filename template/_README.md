@@ -18,9 +18,9 @@ var <%= moduleVariable %> = require('<%= moduleName %>');
 
 ## API
 
-## `<%= moduleVariable %>(value, [options])`
+## `<%= moduleVariable %>(input, [options])`
 
-### `value`
+### `input`
 
 *Required*  
 Type: `string`
