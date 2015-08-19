@@ -34,6 +34,10 @@ var variables = {
   authorEmail: gitConfigList['user.email']
 };
 
+var paths = [
+  __dirname + '/template/**'
+];
+
 gulp.task('git', ['bootstrap'], function(done) {
   exec('git init && git add . && git commit ./ -m ":zap: First setup."', function(error) {
     if(error) {
@@ -52,6 +56,11 @@ gulp.task('bootstrap', function(done) {
       done();
     }
 
+    // Only add CLI support if needed
+    if(!answers.hasCli) {
+      paths.push('!' + __dirname + '/template/cli.js');
+    }
+
     variables = objectAssign(variables, answers, {
       moduleName: hyphenate(answers.moduleName),
       moduleVariable: camelCase(answers.moduleName),
@@ -60,7 +69,7 @@ gulp.task('bootstrap', function(done) {
     });
 
     gulp
-        .src(__dirname + '/template/**')
+        .src(paths)
         .pipe(template(variables))
         .pipe(rename(function(path) {
           var underscore = '_README _package'.split(/\s/);
