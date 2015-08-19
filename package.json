@@ -1,0 +1,40 @@
+{
+  "name": "slush-node-module",
+  "version": "1.0.0",
+  "description": "Scaffold a Node.js module with Slush",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelrinaldi/slush-node-module.git"
+  },
+  "keywords": [
+    "slushgenerator",
+    "slush",
+    "node",
+    "module",
+    "generator",
+    "scaffold",
+    "boilerplate"
+  ],
+  "author": "Rafael Rinaldi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rafaelrinaldi/slush-node-module/issues"
+  },
+  "homepage": "https://github.com/rafaelrinaldi/slush-node-module#readme",
+  "dependencies": {
+    "clear": "0.0.1",
+    "gulp": "^3.9.0",
+    "gulp-git": "^1.2.4",
+    "gulp-install": "^0.5.0",
+    "gulp-template": "^3.0.0",
+    "inquirer": "^0.9.0",
+    "mout": "^0.11.0",
+    "object-assign": "^3.0.0",
+    "porreta": "^1.1.0",
+    "rename": "^1.0.3"
+  }
+}
