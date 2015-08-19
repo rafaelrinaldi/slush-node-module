@@ -20,11 +20,31 @@ Create a new folder for your project and `cd` into it:
 $ mkdir my-new-project && cd my-new-project
 ```
 
-Run the generator and answer the questions:
+Run the generator and answer the questions.
+
+* The author's name and email are fetched from your Git configuration.
+* It'll try to guess your GitHub user name by parsing your name.
+* It'll suggest you a random module name using [`porreta`](http://github.com/rafaelrinaldi/porreta).
 
 ```sh
 $ slush node-module
+
+? What is the name of your module? menisquencia
+? Give your module a description Does some cool stuff.
+? What are the keywords for your module? cli, tool, menisquencia
+? What is your GitHub username? (rafaelrinaldi) 
+? What is the URL of your website? http://rinaldi.io
+? Will you need a CLI? No
+? Will you register this module to Bower's registry? No
+? Should we move on? (Y/n)
 ```
+
+After the installation it will:
+
+1. Install your `npm` dependencies.
+2. Initialize a fresh Git repository.
+3. Stage all new files.
+4. Commit your first setup.
 
 ## Contents
 
