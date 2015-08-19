@@ -1,6 +1,6 @@
 {
   "name": "slush-node-module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Scaffold a Node.js module with Slush",
   "main": "gulpfile.js",
   "scripts": {
