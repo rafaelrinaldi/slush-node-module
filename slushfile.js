@@ -64,7 +64,7 @@ gulp.task('bootstrap', function(done) {
         .pipe(template(variables))
         .pipe(rename(function(path) {
           var underscore = '_README _package'.split(/\s/);
-          var dot = 'editorconfig eslintrc gitattributes gitignore travis'.split(/\s/);
+          var dot = 'editorconfig eslintrc eslintignore gitattributes gitignore travis'.split(/\s/);
 
           if(~underscore.indexOf(path.basename)) {
             path.basename = path.basename.slice(1);

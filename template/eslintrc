@@ -3,14 +3,19 @@
     "node": true
   },
 
+  "plugins": [
+    "no-use-extend-native"
+  ],
+
   "rules": {
+
     "comma-dangle": [2, "always"],
     "no-dupe-args": 2,
     "no-dupe-keys": 2,
     "no-extra-semi": 2,
     "no-extra-parens": 2,
     "no-unreachable": 2,
-    
+
     "curly": [2, "all"],
     "eqeqeq": [2, "smart"],
     "no-floating-decimal": 2,

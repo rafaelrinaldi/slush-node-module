@@ -28,6 +28,7 @@
   ],
   "devDependencies": {
     "eslint": "*",
+    "eslint-plugin-no-use-extend-native": "*",
     "tape": "*"
   }
 }
