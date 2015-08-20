@@ -24,6 +24,7 @@ var read = [
   {name: 'authorUrl', message: 'What is the URL of your website?'},
   {name: 'hasCli', message: 'Will you need a CLI?', type: 'confirm', default: false},
   {name: 'hasBower', message: 'Will you register this module to Bower\'s registry?', type: 'confirm', default: false},
+  {name: 'hasContributing', message: 'Would you like to add a contributing guide?', type: 'confirm', default: false},
   {name: 'shouldMoveOn', message: 'Should we move on?', type: 'confirm', default: true}
 ];
 
@@ -59,6 +60,11 @@ gulp.task('bootstrap', function(done) {
     // Only add CLI support if needed
     if(!answers.hasCli) {
       paths.push('!' + __dirname + '/template/cli.js');
+    }
+
+    // Only add contributing guides if needed
+    if(!answers.hasContributing) {
+      paths.push('!' + __dirname + '/template/CONTRIBUTING.md');
     }
 
     variables = objectAssign(variables, answers, {
