@@ -19,7 +19,8 @@
   },
   "scripts": {
     "lint": "eslint",
-    "test": "npm run lint && tape test.js"
+    "test": "npm run lint && tape test.js",
+    "postversion": "git push --tags"
   },
   "files": [
     "index.js"<% if (hasCli) { %>,
