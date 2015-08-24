@@ -26,7 +26,7 @@
     "no-sequences": 2,
     "no-useless-call": 2,
     "radix": 2,
-    "vars-on-top": true,
+    "vars-on-top": 2,
     "wrap-iife": [2, "outside"],
 
     "strict": [2, "function"],
