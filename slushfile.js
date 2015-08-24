@@ -5,7 +5,6 @@ var gulp = require('gulp');
 var template = require('gulp-template');
 var rename = require('gulp-rename');
 var install = require('gulp-install');
-var porreta = require('porreta');
 var clear = require('clear');
 var inquirer = require('inquirer');
 var objectAssign = require('object-assign');
@@ -15,9 +14,10 @@ var _ = require('./util');
 var gitConfigList = _.gitConfig();
 var guessedUserName = _.guessUserName(gitConfigList['user.name']);
 var exec = require('child_process').exec;
+var pwd = __dirname.split('/').pop();
 
 var read = [
-  {name: 'moduleName', message: 'What is the name of your module?', default: porreta()},
+  {name: 'moduleName', message: 'What is the name of your module?', default: pwd},
   {name: 'moduleDescription', message: 'Give your module a description'},
   {name: 'moduleKeywords', message: 'What are the keywords for your module?'},
   {name: 'authorGitHub', message: 'What is your GitHub username?', default: guessedUserName},
