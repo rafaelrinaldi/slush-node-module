@@ -20,7 +20,7 @@
   "scripts": {
     "lint": "eslint",
     "test": "npm run lint && tape test.js",
-    "postversion": "git push --tags"
+    "postversion": "git push origin master --tags && npm publish"
   },
   "files": [
     "index.js"<% if (hasCli) { %>,
