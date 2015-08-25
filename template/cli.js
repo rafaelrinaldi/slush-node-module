@@ -3,7 +3,7 @@
 'use strict';
 
 var meow = require('meow');
-var <%= moduleVarible %> = require('./');
+var <%= moduleVariable %> = require('./');
 
 var cli = meow({
 	help: [
