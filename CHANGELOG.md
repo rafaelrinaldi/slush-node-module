@@ -1,6 +1,12 @@
-# v1.1.0 (2015/08/19)
+# v1.1.0 (2015/08/25)
 
-* Added CLI support.
+* Removed "porreta". Now project name defaults to current directory.
+* Better npm "postversion" command.
+* Fixed ESLint configuration for variables on top.
+* Always use the latest "porreta" version.
+* Added "postversion" script.
+* Added option to add contributing guides.
+* Added contributing guides to the template.
 
 # v1.0.2 (2015/08/19)
 
