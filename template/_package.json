@@ -12,8 +12,11 @@
     "name": "<%= authorName %>",
     "email": "<%= authorEmail %>",
     "url": "<%= authorUrl %>"
-  },<% if (hasCli) { %>
-  "bin": "cli.js",<% } %>
+  },
+  "main": "index.js",
+  "bin": {<% if (hasCli) { %>
+    "<%= moduleName %>": "./bin/<%= moduleName %>"
+  <% } %>},
   "engines": {
     "node": ">=0.12.0"
   },
@@ -22,10 +25,6 @@
     "test": "npm run lint && tape test.js",
     "postversion": "git push origin master --tags && npm publish"
   },
-  "files": [
-    "index.js"<% if (hasCli) { %>,
-    "cli.js"<% } %>
-  ],
   "keywords": [
 <%= moduleKeywords %>
   ],

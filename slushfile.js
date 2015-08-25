@@ -60,6 +60,7 @@ gulp.task('bootstrap', function(done) {
     // Only add CLI support if needed
     if(!answers.hasCli) {
       paths.push('!' + __dirname + '/template/cli.js');
+      paths.push('!' + __dirname + '/template/bin/*');
     }
 
     // Only add contributing guides if needed
@@ -80,11 +81,14 @@ gulp.task('bootstrap', function(done) {
         .pipe(rename(function(path) {
           var underscore = '_README _package'.split(/\s/);
           var dot = 'editorconfig eslintrc eslintignore gitattributes gitignore travis'.split(/\s/);
+          var binary = /^__binary__$/i;
 
           if(~underscore.indexOf(path.basename)) {
             path.basename = path.basename.slice(1);
           } else if(~dot.indexOf(path.basename)) {
             path.basename = '.' + path.basename;
+          } else if(binary.test(path.basename)) {
+            path.basename = variables.moduleName;
           }
         }))
         .pipe(gulp.dest('./'))
