@@ -4,5 +4,3 @@
 
 var test = require('tape');
 var gulp = require('gulp');
-
-require('./slushfile');
