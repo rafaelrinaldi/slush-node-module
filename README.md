@@ -24,7 +24,7 @@ Run the generator and answer the questions.
 
 * The author's name and email are fetched from your Git configuration.
 * It'll try to guess your GitHub user name by parsing your name.
-* It'll suggest you a random module name using [`porreta`](http://github.com/rafaelrinaldi/porreta).
+* It'll suggest you a project name by reading your current directory.
 
 ```sh
 $ slush node-module
@@ -36,6 +36,7 @@ $ slush node-module
 ? What is the URL of your website? http://rinaldi.io
 ? Will you need a CLI? No
 ? Will you register this module to Bower's registry? No
+? Would you like to add a contributing guide? Yes
 ? Should we move on? (Y/n)
 ```
 
@@ -48,7 +49,7 @@ After the installation it will:
 
 ## Contents
 
-### Documentation
+### General
 
 #### `README.md`
 
@@ -108,6 +109,15 @@ Simple Git configuration to ensure line endings are normalized across different 
 * [io.js](https://iojs.org)
 * [Node.js version `0.12`](https://github.com/joyent/node/releases/tag/v0.12.0)
 * [Node.js version `0.10`](https://github.com/joyent/node/releases/tag/v0.10.0)
+
+### CLI
+
+When scaffolding a Node.js module that has a CLI interface:
+
+* It will generate a binary file under `./bin` which is described as a best practice by [the CommonJS standard](http://wiki.commonjs.org/wiki/Packages/1.1#Package_Directory_Layout)
+* It will generate `cli.js` file on the project root that will be the command line interface for the module
+* The `cli.js` file will expose `exitCode`, `stdout`, `stderr`, `run()`, and `parse()` for better test integration (thanks @millermedeiros for the awesome tip) 
+* The program will come with bultin usage instructions (triggered via `--help`) and version number (triggered via `--version`)
 
 ## License
 
