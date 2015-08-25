@@ -34,8 +34,8 @@
     "multiline": "^1.0.2"
   <% } %>},
   "devDependencies": {
-    "eslint": "*",
+    "eslint": "^1.2.1",
     "eslint-plugin-no-use-extend-native": "*",
-    "tape": "*"
+    "tape": "^4.2.0"
   }
 }
