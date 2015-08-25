@@ -14,7 +14,7 @@ var _ = require('./util');
 var gitConfigList = _.gitConfig();
 var guessedUserName = _.guessUserName(gitConfigList['user.name']);
 var exec = require('child_process').exec;
-var pwd = __dirname.split('/').pop();
+var pwd = process.cwd().split('/').pop();
 
 var read = [
   {name: 'moduleName', message: 'What is the name of your module?', default: pwd},
