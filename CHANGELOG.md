@@ -1,4 +1,14 @@
-# v1.1.0 (2015/08/25)
+# v1.3.0 (2015/08/25)
+
+* Only offers to add Bower if CLI is falsy.
+* Improved CLI scaffolding thanks to @millermedeiros!
+* Locked module dependencies version.
+* Modified CLI dependencies.
+* Fixed typo on CLI file template.
+* Removed unused Gulp file.
+* Improved and fixed issues with project name suggestion. Closed #3 and #2.
+
+# v1.2.0 (2015/08/25)
 
 * Removed "porreta". Now project name defaults to current directory.
 * Better npm "postversion" command.
