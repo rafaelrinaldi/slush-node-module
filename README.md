@@ -26,7 +26,7 @@ Run the generator and answer the questions.
 * It'll try to guess your GitHub user name by parsing your name.
 * It'll suggest you a project name by reading your current directory.
 
-```sh
+```
 $ slush node-module
 
 ? What is the name of your module? menisquencia
@@ -116,7 +116,7 @@ When scaffolding a Node.js module that has a CLI interface:
 
 * It will generate a binary file under `./bin` which is described as a best practice by [the CommonJS standard](http://wiki.commonjs.org/wiki/Packages/1.1#Package_Directory_Layout)
 * It will generate `cli.js` file on the project root that will be the command line interface for the module
-* The `cli.js` file will expose `exitCode`, `stdout`, `stderr`, `run()`, and `parse()` for better test integration (thanks @millermedeiros for the awesome tip) 
+* The `cli.js` file will expose `exitCode`, `stdout`, `stderr`, `run()`, and `parse()` for better test integration (thanks [@millermedeiros](http://github.com/millermedeiros) for the awesome tip) 
 * The program will come with bultin usage instructions (triggered via `--help`) and version number (triggered via `--version`)
 
 ## License
