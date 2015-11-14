@@ -1,4 +1,4 @@
-# slush-node-module [![Build Status](https://travis-ci.org/rafaelrinaldi/slush-node-module.svg?branch=master)](https://travis-ci.org/rafaelrinaldi/slush-node-module)
+# slush-node-module
 
 > Scaffold a Node.js module with [Slush](http://slushjs.github.io).
 
