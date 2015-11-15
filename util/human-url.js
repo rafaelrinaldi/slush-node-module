@@ -7,7 +7,7 @@ module.exports = function(url) {
     return '';
   }
 
-  var protocol = parseUrl(url).protocol;
+  var protocol = parseUrl(url).protocol + '//';
 
   return url
             .replace(protocol, '')
