@@ -22,29 +22,24 @@ $ mkdir my-new-project && cd my-new-project
 
 Run the generator and answer the questions.
 
-* The author's name and email are fetched from your Git configuration.
+* The author's name and email are fetched from your global Git configuration.
 * It'll try to guess your GitHub user name by parsing your name.
 * It'll suggest you a project name by reading your current directory.
 
 ```
 $ slush node-module
-
-? What is the name of your module? menisquencia
-? Give your module a description Does some cool stuff.
-? What are the keywords for your module? cli, tool, menisquencia
-? What is your GitHub username? (rafaelrinaldi) 
-? What is the URL of your website? http://rinaldi.io
+? Module name: my-new-project
+? Description: My super cool new project
+? Keywords (comma-separated): project, cool, personal
+? Your GitHub username: rafaelrinaldi
+? URL of your website: http://rinaldi.io
 ? Will you need a CLI? No
-? Would you like to add a contributing guide? Yes
-? Should we move on? (Y/n)
 ```
 
 After the installation it will:
 
 1. Install your `npm` dependencies.
 2. Initialize a fresh Git repository.
-3. Stage all new files.
-4. Commit your first setup.
 
 ## Contents
 
@@ -59,10 +54,6 @@ An overview of the module and what it does.
 * API documentation.
 * Mention to software license and author.
 
-#### `CHANGELOG.md`
-
-This file is used to keep a history of module releases.
-
 #### `LICENSE`
 
 Software license file which follows the [MIT standard](http://opensource.org/licenses/MIT).
@@ -73,8 +64,8 @@ Software license file which follows the [MIT standard](http://opensource.org/lic
 
 * `1.0.0` by default.
 * `MIT` license by default.
-* `>=0.12.0` [Node.js](http://nodejs.org) engine by default.
-* `lint` task that will lint JavaScript files with [ESLint](http://eslint.org). Uses the [`no-use-extend-native`](https://github.com/dustinspecker/eslint-plugin-no-use-extend-native) plugin.
+* `>=0.10.0` [Node.js](http://nodejs.org) engine by default.
+* `lint` task that will lint JavaScript files with [xo](https://github.com/sindresorhus/xo).
 * `test` task that will trigger JavaScript linting and then test `test.js` using [`tape`](https://github.com/substack/tape).
 
 #### dotfiles
@@ -83,15 +74,7 @@ Files that are hidden by default.
 
 ##### `.editorconfig`
 
-[EditorConfig](http://editorconfig.org) configuration file. This is used to enforce consistency between editos and IDEs.
-
-##### `.eslintrc`
-
-ESLint configuration file. This is my JavaScript linter of choice and I use it to enfornce code visual consistency, best practices and to avoid possible issues with the language itself.
-
-##### `.eslintignore`
-
-Files and folders to be ignored by ESLint. Currently only `dist/` is added to the list.
+[EditorConfig](http://editorconfig.org) configuration file. This is used to enforce consistency between editors and IDEs.
 
 ##### `.gitignore`
 
@@ -100,14 +83,6 @@ Files and folders to be ignored by [Git](https://git-scm.com).
 ##### `.gitattributes`
 
 Simple Git configuration to ensure line endings are normalized across different operating systems.
-
-##### `.travis.yml`
-
-[Travis CI](http://travis-ci.org) configuration file. It will run tests against the following environments:
-
-* [io.js](https://iojs.org)
-* [Node.js version `0.12`](https://github.com/joyent/node/releases/tag/v0.12.0)
-* [Node.js version `0.10`](https://github.com/joyent/node/releases/tag/v0.10.0)
 
 ### CLI
 
