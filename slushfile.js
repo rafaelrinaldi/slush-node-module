@@ -22,7 +22,6 @@ var read = [
   {name: 'authorGitHub', message: 'What is your GitHub username?', default: guessedUserName},
   {name: 'authorUrl', message: 'What is the URL of your website?'},
   {name: 'hasCli', message: 'Will you need a CLI?', type: 'confirm', default: false},
-  {name: 'hasBower', message: 'Will you register this module to Bower\'s registry?', type: 'confirm', default: false, when: function(answers) { return answers.hasBower; }},
   {name: 'hasContributing', message: 'Would you like to add a contributing guide?', type: 'confirm', default: false},
   {name: 'shouldMoveOn', message: 'Should we move on?', type: 'confirm', default: true}
 ];
@@ -77,7 +76,7 @@ gulp.task('bootstrap', function(done) {
         .pipe(template(variables))
         .pipe(rename(function(path) {
           var underscore = '_README _package'.split(/\s/);
-          var dot = 'editorconfig eslintrc eslintignore gitattributes gitignore travis'.split(/\s/);
+          var dot = 'editorconfig gitattributes gitignore'.split(/\s/);
           var binary = /^__binary__$/i;
 
           if(~underscore.indexOf(path.basename)) {
