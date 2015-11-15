@@ -51,7 +51,7 @@ gulp.task('bootstrap', function(done) {
     // Only add CLI support if needed
     if(!answers.hasCli) {
       paths.push('!' + __dirname + '/template/cli.js');
-      paths.push('!' + __dirname + '/template/bin/*');
+      paths.push('!' + __dirname + '/template/{bin,bin/**}');
     }
 
     // Only add contributing guides if needed
