@@ -37,7 +37,7 @@ var paths = [
 ];
 
 gulp.task('git', ['bootstrap'], function(done) {
-  exec('git init && git add . && git commit ./ -m ":zap: First setup."', function(error) {
+  exec('git init', function(error) {
     if(error) {
       throw error;
     }
