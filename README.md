@@ -35,7 +35,6 @@ $ slush node-module
 ? What is your GitHub username? (rafaelrinaldi) 
 ? What is the URL of your website? http://rinaldi.io
 ? Will you need a CLI? No
-? Will you register this module to Bower's registry? No
 ? Would you like to add a contributing guide? Yes
 ? Should we move on? (Y/n)
 ```
