@@ -13,10 +13,10 @@
     "email": "<%= authorEmail %>",
     "url": "<%= authorHumanizedUrl %>"
   },
-  "main": "index.js",
-  "bin": {<% if (hasCli) { %>
+  "main": "index.js",<% if (hasCli) { %>
+  "bin": {
     "<%= moduleName %>": "./bin/<%= moduleName %>"
-  <% } %>},
+  },<% } %>
   "engines": {
     "node": ">=0.10.0"
   },
@@ -33,11 +33,11 @@
   },
   "keywords": [
 <%= moduleKeywords %>
-  ],
-  "dependencies": {<% if (hasCli) { %>
+  ],<% if (hasCli) { %>
+  "dependencies": {
     "minimist": "^1.2.0",
     "multiline": "^1.0.2"
-  <% } %>},
+  },<% } %>
   "devDependencies": {
     "xo": "^0.10.0",
     "tape": "^4.2.2"
