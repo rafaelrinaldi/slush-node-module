@@ -7,5 +7,9 @@ module.exports = function(url) {
     return '';
   }
 
-  return parseUrl(url).host.replace('www.', '');
+  var protocol = parseUrl(url).protocol;
+
+  return url
+            .replace(protocol, '')
+            .replace('www.', '');
 };
