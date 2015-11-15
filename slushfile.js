@@ -21,8 +21,7 @@ var read = [
   {name: 'moduleKeywords', message: 'Keywords (comma-separated):'},
   {name: 'authorGitHub', message: 'Your GitHub username:', default: guessedUserName},
   {name: 'authorUrl', message: 'URL of your website:'},
-  {name: 'hasCli', message: 'Will you need a CLI?', type: 'confirm', default: false},
-  {name: 'hasContributing', message: 'Would you like to add a contributing guide?', type: 'confirm', default: false}
+  {name: 'hasCli', message: 'Will you need a CLI?', type: 'confirm', default: false}
 ];
 
 var variables = {
@@ -52,11 +51,6 @@ gulp.task('bootstrap', function(done) {
     if(!answers.hasCli) {
       paths.push('!' + __dirname + '/template/cli.js');
       paths.push('!' + __dirname + '/template/{bin,bin/**}');
-    }
-
-    // Only add contributing guides if needed
-    if(!answers.hasContributing) {
-      paths.push('!' + __dirname + '/template/CONTRIBUTING.md');
     }
 
     variables = objectAssign(variables, answers, {
