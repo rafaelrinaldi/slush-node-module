@@ -62,7 +62,7 @@ gulp.task('bootstrap', function(done) {
     variables = objectAssign(variables, answers, {
       moduleName: hyphenate(answers.moduleName),
       moduleVariable: camelCase(answers.moduleName),
-      moduleKeywords: _.parseModuleKeywords(answers.moduleKeywords, {tabs: 2, newline: true}),
+      moduleKeywords: _.parseModuleKeywords(answers.moduleKeywords, {soft: true, tabs: 4, newline: true}),
       authorHumanizedUrl: _.humanUrl(answers.authorUrl)
     });
 

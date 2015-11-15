@@ -7,19 +7,22 @@ module.exports = function(input, options) {
   var list = input.split(',');
   var tabs = options.tabs || false;
   var newline = options.newline || false;
+  var soft = options.soft || true;
 
   list.forEach(function(entry, index) {
     var isLast = index === list.length - 1;
 
     if(tabs) {
       var size = typeof tabs === 'number' ? tabs + 1 : 2;
-      output += new Array(size).join('\t');
+      var tab = soft ? ' ' : '\t';
+
+      output += new Array(size).join(tab);
     }
 
     output += '"' + entry + '"';
 
     if(!isLast) {
-      output += ', ' + (options.newline ? '\n' : '');
+      output += ',' + (options.newline ? '\n' : '');
     }
   });
 
