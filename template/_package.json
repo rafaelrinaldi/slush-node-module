@@ -12,8 +12,7 @@
     "name": "<%= authorName %>",
     "email": "<%= authorEmail %>",
     "url": "<%= authorHumanizedUrl %>"
-  },
-  "main": "index.js",<% if (hasCli) { %>
+  },<% if (hasCli) { %>
   "bin": {
     "<%= moduleName %>": "./bin/<%= moduleName %>"
   },<% } %>
