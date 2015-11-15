@@ -5,7 +5,6 @@ var gulp = require('gulp');
 var template = require('gulp-template');
 var rename = require('gulp-rename');
 var install = require('gulp-install');
-var clear = require('clear');
 var inquirer = require('inquirer');
 var objectAssign = require('object-assign');
 var camelCase = require('mout/string/camelCase');
@@ -50,8 +49,6 @@ gulp.task('git', ['bootstrap'], function(done) {
 });
 
 gulp.task('bootstrap', function(done) {
-  clear();
-
   inquirer.prompt(read, function(answers) {
     if(!answers.shouldMoveOn) {
       done();

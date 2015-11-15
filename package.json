@@ -27,7 +27,6 @@
   "homepage": "https://github.com/rafaelrinaldi/slush-node-module#readme",
   "dependencies": {
     "add-zero": "^1.0.0",
-    "clear": "0.0.1",
     "gulp": "^3.9.0",
     "gulp-git": "^1.2.4",
     "gulp-install": "^0.5.0",
