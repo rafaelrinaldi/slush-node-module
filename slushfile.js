@@ -22,8 +22,7 @@ var read = [
   {name: 'authorGitHub', message: 'Your GitHub username:', default: guessedUserName},
   {name: 'authorUrl', message: 'URL of your website:'},
   {name: 'hasCli', message: 'Will you need a CLI?', type: 'confirm', default: false},
-  {name: 'hasContributing', message: 'Would you like to add a contributing guide?', type: 'confirm', default: false},
-  {name: 'shouldMoveOn', message: 'Should we move on?', type: 'confirm', default: true}
+  {name: 'hasContributing', message: 'Would you like to add a contributing guide?', type: 'confirm', default: false}
 ];
 
 var variables = {
@@ -49,10 +48,6 @@ gulp.task('git', ['bootstrap'], function(done) {
 
 gulp.task('bootstrap', function(done) {
   inquirer.prompt(read, function(answers) {
-    if(!answers.shouldMoveOn) {
-      done();
-    }
-
     // Only add CLI support if needed
     if(!answers.hasCli) {
       paths.push('!' + __dirname + '/template/cli.js');
