@@ -21,7 +21,7 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "lint": "eslint",
+    "lint": "xo",
     "test": "npm run lint && tape test.js",
     "postversion": "git push origin master --tags && npm publish"
   },
@@ -33,8 +33,7 @@
     "multiline": "^1.0.2"
   <% } %>},
   "devDependencies": {
-    "eslint": "^1.2.1",
-    "eslint-plugin-no-use-extend-native": "*",
+    "xo": "^0.10.0",
     "tape": "^4.2.0"
   }
 }
