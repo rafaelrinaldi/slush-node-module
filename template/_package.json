@@ -20,6 +20,12 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "xo": {
+    "space": true,
+    "rules": {
+      "space-before-function-paren": [2, "never"]
+    }
+  },
   "scripts": {
     "lint": "xo",
     "test": "npm run lint && tape test.js",
