@@ -16,11 +16,11 @@ var exec = require('child_process').exec;
 var pwd = process.cwd().split('/').pop();
 
 var read = [
-  {name: 'moduleName', message: 'What is the name of your module?', default: pwd},
-  {name: 'moduleDescription', message: 'Give your module a description'},
-  {name: 'moduleKeywords', message: 'What are the keywords for your module?'},
-  {name: 'authorGitHub', message: 'What is your GitHub username?', default: guessedUserName},
-  {name: 'authorUrl', message: 'What is the URL of your website?'},
+  {name: 'moduleName', message: 'Module name:', default: pwd},
+  {name: 'moduleDescription', message: 'Description:'},
+  {name: 'moduleKeywords', message: 'Keywords (comma-separated):'},
+  {name: 'authorGitHub', message: 'Your GitHub username:', default: guessedUserName},
+  {name: 'authorUrl', message: 'URL of your website:'},
   {name: 'hasCli', message: 'Will you need a CLI?', type: 'confirm', default: false},
   {name: 'hasContributing', message: 'Would you like to add a contributing guide?', type: 'confirm', default: false},
   {name: 'shouldMoveOn', message: 'Should we move on?', type: 'confirm', default: true}
