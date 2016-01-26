@@ -14,6 +14,8 @@ var defaults = {
   }
 };
 var version = require('./package.json').version;
+
+/* eslint-disable */
 var help = multiline(function() {/*
 
 Usage: <%= moduleName %> [PATH] [OPTIONS]
@@ -29,6 +31,7 @@ Options:
 
 
 */});
+/* eslint-enable */
 
 // Must be ≠ 0 if any errors occur during execution
 exports.exitCode = 0;
