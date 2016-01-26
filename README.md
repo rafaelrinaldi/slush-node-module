@@ -2,14 +2,15 @@
 
 > Scaffold a Node.js module with [Slush](http://slushjs.github.io).
 
+[![Dependencies Status](https://david-dm.org/rafaelrinaldi/slush-node-module.svg)](https://david-dm.org/rafaelrinaldi/slush-node-module)
+
 ## Install
 
-1. Install [`gulp.js`](http://gulpjs.com)
-2. Install [Slush](http://slushjs.github.io)
-3. Install the [`slush-node-module`](http://slushjs.github.io) generator
+1. Install [Slush](http://slushjs.github.io)
+2. Install the [`slush-node-module`](http://slushjs.github.io) generator
 
 ```sh
-$ npm install -g gulp slush slush-node-module
+$ npm install -g slush slush-node-module
 ```
 
 ## Usage
@@ -36,10 +37,7 @@ $ slush node-module
 ? Will you need a CLI? No
 ```
 
-After the installation it will:
-
-1. Install your `npm` dependencies.
-2. Initialize a fresh Git repository.
+After the installation it will install your `npm` dependencies and you should be good to go.
 
 ## Contents
 
@@ -49,7 +47,6 @@ After the installation it will:
 
 An overview of the module and what it does.
 
-* Travis CI badge to show build status.
 * Usage example.
 * API documentation.
 * Mention to software license and author.
@@ -90,7 +87,7 @@ When scaffolding a Node.js module that has a CLI interface:
 
 * It will generate a binary file under `./bin` which is described as a best practice by [the CommonJS standard](http://wiki.commonjs.org/wiki/Packages/1.1#Package_Directory_Layout)
 * It will generate `cli.js` file on the project root that will be the command line interface for the module
-* The `cli.js` file will expose `exitCode`, `stdout`, `stderr`, `run()`, and `parse()` for better test integration (thanks [@millermedeiros](http://github.com/millermedeiros) for the awesome tip) 
+* The `cli.js` file will expose `exitCode`, `stdout`, `stderr`, `run()`, and `parse()` for better test integration (kudos @millermedeiros) 
 * The program will come with bultin usage instructions (triggered via `--help`) and version number (triggered via `--version`)
 
 ## License
