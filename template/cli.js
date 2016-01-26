@@ -1,5 +1,6 @@
 'use strict';
 
+var <%= moduleVariable %> = require('./');
 var minimist = require('minimist');
 var multiline = require('multiline');
 var defaults = {
@@ -20,22 +21,19 @@ Usage: <%= moduleName %> [PATH] [OPTIONS]
   <%= moduleDescription %>
 
 Example:
-  <%= moduleName %> . --foo=bar
+  <%= moduleName %> .
 
 Options:
   -v --version              Display current software version.
   -h --help                 Display help and usage details.
-  -f --foo                  Some custom option.
 
 
 */});
 
-function run(argv) {
-  console.log('<%= moduleName %> is alive!');
-}
-
+// Must be ≠ 0 if any errors occur during execution
 exports.exitCode = 0;
 
+// Allow mocking the stdout/stderr
 exports.stdout = process.stdout;
 exports.stderr = process.stderr;
 
@@ -44,6 +42,7 @@ exports.parse = function(options) {
 };
 
 exports.run = function(argv) {
+  // Reset status code at each run
   exports.exitCode = 0;
 
   if(argv.help) {
@@ -58,3 +57,15 @@ exports.run = function(argv) {
 
   run(argv);
 };
+
+function run(argv) {
+  <%= moduleVariable %>(argv);
+}
+
+function logError(error) {
+  var message = typeof error === 'string' ? error : error.message;
+
+  exports.exitCode = 1;
+
+  exports.stderr.write(message + '\n');
+}
