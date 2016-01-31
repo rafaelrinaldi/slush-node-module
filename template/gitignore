@@ -1,19 +1,19 @@
-# OS stuff
+# OS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
 
-# Node.js stuff
+# Node.js
 node_modules
 
-# Vim stuff
+# Bower
+bower_components
+
+# Vim
 *.swp
 *.swo
 
 # Source maps
 *.map
+
+# Misc
+tmp
+dist
