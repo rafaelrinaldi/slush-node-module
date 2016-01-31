@@ -24,16 +24,22 @@ const read = [
   {name: 'hasCli', message: 'Will you need a CLI?', type: 'confirm', default: false}
 ];
 
-const variables = {
-  today: _.today(),
-  moduleVersion: '1.0.0',
-  authorName: gitConfigList['user.name'],
-  authorEmail: gitConfigList['user.email']
-};
-
-const paths = [
+let paths = [
   `${__dirname}/template/**`
 ];
+
+let variables = {
+  today: _.today(),
+  authorName: gitConfigList['user.name'],
+  authorEmail: gitConfigList['user.email'],
+  /**
+   * Apparently `gulp-template` goes crazy if we don't pass on a `version`
+   * property. Probably because the `cli.js` file, which is parsed by it, does
+   * a require for the npm manifest file in order to find out the software
+   * version.
+   **/
+  version: ''
+};
 
 gulp.task('git', ['bootstrap'], done => {
   exec('git init', error => {
@@ -68,14 +74,14 @@ gulp.task('bootstrap', done => {
         .src(paths)
         .pipe(template(variables))
         .pipe(rename(path => {
-          const underscore = '_README _package'.split(/\s/);
-          const dot = 'editorconfig gitattributes gitignore'.split(/\s/);
+          const underscore = `_README _package`.split(/\s/);
+          const dot = `editorconfig gitattributes gitignore`.split(/\s/);
           const binary = /^__binary__$/i;
 
           if (~underscore.indexOf(path.basename)) {
             path.basename = path.basename.slice(1);
           } else if (~dot.indexOf(path.basename)) {
-            path.basename = '.' + path.basename;
+            path.basename = `.${path.basename}`;
           } else if (binary.test(path.basename)) {
             path.basename = variables.moduleName;
           }
