@@ -6,14 +6,14 @@
 * // Into this:
 * {'user.name': 'Rafael Rinaldi', email: 'rafael@rinaldi.io'}
 */
-module.exports = function(raw) {
-  var config = {};
+module.exports = raw => {
+  let config = {};
 
   raw
     .trim()
     .split(/\n/)
-    .forEach(function(value) {
-      var parsed = value.split('=');
+    .forEach(value => {
+      let parsed = value.split('=');
       config[parsed[0]] = parsed[1];
   });
 

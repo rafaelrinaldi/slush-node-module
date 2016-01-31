@@ -1,13 +1,13 @@
 'use strict';
 
-var parseUrl = require('url').parse;
+const parseUrl = require('url').parse;
 
-module.exports = function(url) {
-  if(!url) {
+module.exports = url => {
+  if (!url) {
     return '';
   }
 
-  var protocol = parseUrl(url).protocol + '//';
+  const protocol = parseUrl(url).protocol + '//';
 
   return url
             .replace(protocol, '')

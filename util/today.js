@@ -1,13 +1,12 @@
 'use strict';
 
-var addZero = require('add-zero');
-var format = require('util').format;
+const addZero = require('add-zero');
 
-module.exports = function() {
-  var now = new Date();
-  var year = now.getFullYear();
-  var month = addZero(now.getMonth() + 1);
-  var date = addZero(now.getDate());
+module.exports = () => {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = addZero(now.getMonth() + 1);
+  const date = addZero(now.getDate());
 
-  return format('%s/%s/%s', year, month, date);
+  return `${year}/${month}/${date}`;
 };

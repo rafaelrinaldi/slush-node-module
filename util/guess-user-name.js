@@ -1,7 +1,3 @@
 'use strict';
 
-module.exports = function(name) {
-  return name
-            .toLowerCase()
-            .replace(/\s/, '');
-};
+module.exports = name => name.toLowerCase().replace(/\s/, '');

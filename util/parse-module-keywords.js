@@ -1,27 +1,28 @@
 'use strict';
 
-module.exports = function(input, options) {
+module.exports = (input, options) => {
   options = options || {};
 
-  var output = '';
-  var list = input.split(',');
-  var tabs = options.tabs || false;
-  var newline = options.newline || false;
-  var soft = options.soft || true;
+  let output = '';
 
-  list.forEach(function(entry, index) {
-    var isLast = index === list.length - 1;
+  const list = input.split(',');
+  const tabs = options.tabs || false;
+  const newline = options.newline || false;
+  const soft = options.soft || true;
 
-    if(tabs) {
-      var size = typeof tabs === 'number' ? tabs + 1 : 2;
-      var tab = soft ? ' ' : '\t';
+  list.forEach((entry, index) => {
+    const isLast = index === list.length - 1;
+
+    if (tabs) {
+      const size = typeof tabs === 'number' ? tabs + 1 : 2;
+      const tab = soft ? ' ' : '\t';
 
       output += new Array(size).join(tab);
     }
 
     output += '"' + entry + '"';
 
-    if(!isLast) {
+    if (!isLast) {
       output += ',' + (options.newline ? '\n' : '');
     }
   });
