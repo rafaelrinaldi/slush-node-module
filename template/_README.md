@@ -21,8 +21,7 @@ Example:
 Options:
   -v --version              Display current software version
   -h --help                 Display help and usage details
-```<% } else { %>
-```js
+```<% } else { %>```js
 var <%= moduleVariable %> = require('<%= moduleName %>');
 
 <%= moduleVariable %>('ping', {}); // pong
@@ -34,24 +33,24 @@ var <%= moduleVariable %> = require('<%= moduleName %>');
 
 ### `input`
 
-*Required*  
+*Required*
 Type: `string`
 
 Lorem ipsum.
 
 ### `options`
 
-Type: `object`  
+Type: `object`
 
 Available options.
 
 ##### `options.option`
 
-Type: `boolean`  
+Type: `boolean`
 Default: `false`
 
 Dolor Sit.<% } %>
 
 ## License
 
-MIT © [<%= authorName %>](<%= authorUrl %>)
+MIT :copyright: [<%= authorName %>](<%= authorUrl %>)
