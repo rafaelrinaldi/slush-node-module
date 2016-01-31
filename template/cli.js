@@ -23,11 +23,11 @@ Example:
   <%= moduleName %> .
 
 Options:
-  -v --version              Display current software version.
-  -h --help                 Display help and usage details.
+  -v --version              Display current software version
+  -h --help                 Display help and usage details
 `;
 
-const run = argv => hn(argv);
+const run = argv => <%= moduleVariable %>(argv);
 
 // Must be ≠ 0 if any errors occur during execution
 exports.exitCode = 0;
@@ -48,7 +48,7 @@ exports.run = argv => {
   }
 
   if (argv.version) {
-    exports.stderr.write(`hn-cli v${version}\n`);
+    exports.stderr.write(`<%= moduleName %> v<%= version %>\n`);
     return;
   }
 
