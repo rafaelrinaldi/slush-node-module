@@ -10,6 +10,18 @@ $ npm install <%= moduleName %> --save
 
 ## Usage
 
+<% if (hasCli) { %>```sh
+Usage: <%= moduleName %> [OPTIONS]
+
+  <%= moduleDescription %>
+
+Example:
+  $ <%= moduleName %> .
+
+Options:
+  -v --version              Display current software version
+  -h --help                 Display help and usage details
+```<% } else { %>
 ```js
 var <%= moduleVariable %> = require('<%= moduleName %>');
 
@@ -38,7 +50,7 @@ Available options.
 Type: `boolean`  
 Default: `false`
 
-Dolor Sit.
+Dolor Sit.<% } %>
 
 ## License
 
