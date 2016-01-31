@@ -1,6 +1,10 @@
 # slush-node-module
 
-> Scaffold a Node.js module with [Slush](http://slushjs.github.io).
+> Scaffold a Node.js module with [Slush](http://slushjs.github.io)
+
+This is what I use for [my own modules](https://www.npmjs.com/~rafaelrinaldi).
+
+Inspired by [`generator-nm`](https://github.com/sindresorhus/generator-nm).
 
 [![Dependencies Status](https://david-dm.org/rafaelrinaldi/slush-node-module.svg)](https://david-dm.org/rafaelrinaldi/slush-node-module)
 
@@ -61,9 +65,9 @@ Software license file which follows the [MIT standard](http://opensource.org/lic
 
 * `1.0.0` by default.
 * `MIT` license by default.
-* `>=0.10.0` [Node.js](http://nodejs.org) engine by default.
-* `lint` task that will lint JavaScript files with [xo](https://github.com/sindresorhus/xo).
-* `test` task that will trigger JavaScript linting and then test `test.js` using [`tape`](https://github.com/substack/tape).
+* Locks [Node.js](http://nodejs.org) engine to `>=0.10.0` for regular modules and `>=4` for CLI (so we can use ES2015 features).
+* `lint` task that will lint JavaScript files with [`xo`](https://github.com/sindresorhus/xo).
+* `test` task that will trigger JavaScript linting and then test `test.js` using [`tape`](https://github.com/substack/tape) and [`tap-spec`](https://github.com/scottcorgan/tap-spec).
 
 #### dotfiles
 
@@ -87,9 +91,9 @@ When scaffolding a Node.js module that has a CLI interface:
 
 * It will generate a binary file under `./bin` which is described as a best practice by [the CommonJS standard](http://wiki.commonjs.org/wiki/Packages/1.1#Package_Directory_Layout)
 * It will generate `cli.js` file on the project root that will be the command line interface for the module
-* The `cli.js` file will expose `exitCode`, `stdout`, `stderr`, `run()`, and `parse()` for better test integration (kudos @millermedeiros) 
+* The `cli.js` file will expose `exitCode`, `stdout`, `stderr`, `run()`, and `parse()` for better test integration (kudos @millermedeiros)
 * The program will come with bultin usage instructions (triggered via `--help`) and version number (triggered via `--version`)
 
 ## License
 
-MIT © [Rafael Rinaldi](http://rinaldi.io)
+MIT :copyright: [Rafael Rinaldi](http://rinaldi.io)
