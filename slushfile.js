@@ -1,21 +1,21 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
-var template = require('gulp-template');
-var rename = require('gulp-rename');
-var install = require('gulp-install');
-var inquirer = require('inquirer');
-var objectAssign = require('object-assign');
-var camelCase = require('mout/string/camelCase');
-var hyphenate = require('mout/string/hyphenate');
-var _ = require('./util');
-var gitConfigList = _.gitConfig();
-var guessedUserName = _.guessUserName(gitConfigList['user.name']);
-var exec = require('child_process').exec;
-var pwd = process.cwd().split('/').pop();
+const path = require('path');
+const gulp = require('gulp');
+const template = require('gulp-template');
+const rename = require('gulp-rename');
+const install = require('gulp-install');
+const inquirer = require('inquirer');
+const objectAssign = require('object-assign');
+const camelCase = require('mout/string/camelCase');
+const hyphenate = require('mout/string/hyphenate');
+const _ = require('./util');
+const gitConfigList = _.gitConfig();
+const guessedUserName = _.guessUserName(gitConfigList['user.name']);
+const exec = require('child_process').exec;
+const pwd = process.cwd().split('/').pop();
 
-var read = [
+const read = [
   {name: 'moduleName', message: 'Module name:', default: pwd},
   {name: 'moduleDescription', message: 'Description:'},
   {name: 'moduleKeywords', message: 'Keywords (comma-separated):'},
@@ -24,20 +24,20 @@ var read = [
   {name: 'hasCli', message: 'Will you need a CLI?', type: 'confirm', default: false}
 ];
 
-var variables = {
+const variables = {
   today: _.today(),
   moduleVersion: '1.0.0',
   authorName: gitConfigList['user.name'],
   authorEmail: gitConfigList['user.email']
 };
 
-var paths = [
-  __dirname + '/template/**'
+const paths = [
+  `${__dirname}/template/**`
 ];
 
-gulp.task('git', ['bootstrap'], function(done) {
-  exec('git init', function(error) {
-    if(error) {
+gulp.task('git', ['bootstrap'], done => {
+  exec('git init', error => {
+    if (error) {
       throw error;
     }
 
@@ -45,34 +45,38 @@ gulp.task('git', ['bootstrap'], function(done) {
   });
 });
 
-gulp.task('bootstrap', function(done) {
-  inquirer.prompt(read, function(answers) {
+gulp.task('bootstrap', done => {
+  inquirer.prompt(read, answers => {
     // Only add CLI support if needed
-    if(!answers.hasCli) {
-      paths.push('!' + __dirname + '/template/cli.js');
-      paths.push('!' + __dirname + '/template/{bin,bin/**}');
+    if (!answers.hasCli) {
+      paths.push(`!${__dirname}/template/cli.js`);
+      paths.push(`!${__dirname}/template/{bin,bin/**}`);
     }
 
     variables = objectAssign(variables, answers, {
       moduleName: hyphenate(answers.moduleName),
       moduleVariable: camelCase(answers.moduleName),
-      moduleKeywords: _.parseModuleKeywords(answers.moduleKeywords, {soft: true, tabs: 4, newline: true}),
+      moduleKeywords: _.parseModuleKeywords(answers.moduleKeywords, {
+        soft: true,
+        tabs: 4,
+        newline: true
+      }),
       authorHumanizedUrl: _.humanUrl(answers.authorUrl)
     });
 
     gulp
         .src(paths)
         .pipe(template(variables))
-        .pipe(rename(function(path) {
-          var underscore = '_README _package'.split(/\s/);
-          var dot = 'editorconfig gitattributes gitignore'.split(/\s/);
-          var binary = /^__binary__$/i;
+        .pipe(rename(path => {
+          const underscore = '_README _package'.split(/\s/);
+          const dot = 'editorconfig gitattributes gitignore'.split(/\s/);
+          const binary = /^__binary__$/i;
 
-          if(~underscore.indexOf(path.basename)) {
+          if (~underscore.indexOf(path.basename)) {
             path.basename = path.basename.slice(1);
-          } else if(~dot.indexOf(path.basename)) {
+          } else if (~dot.indexOf(path.basename)) {
             path.basename = '.' + path.basename;
-          } else if(binary.test(path.basename)) {
+          } else if (binary.test(path.basename)) {
             path.basename = variables.moduleName;
           }
         }))
