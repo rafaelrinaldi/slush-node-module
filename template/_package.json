@@ -17,10 +17,10 @@
     "<%= moduleName %>": "./bin/<%= moduleName %>"
   },<% } %>
   "engines": {
-    "node": ">=0.10.0"
+    <% if (hasCli) { %>"node": ">=0.10.0"<% } else { %>"node": ">=4"<% } %>
   },
-  "xo": {<% if (hasCli) { %>
-    "esnext": true,<% } %>
+  "xo": {
+    <% if (hasCli) { %>"esnext": true,<% } %>
     "space": true,
     "rules": {
       "space-before-function-paren": [2, "never"]
