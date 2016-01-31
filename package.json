@@ -15,6 +15,9 @@
     "scaffold",
     "boilerplate"
   ],
+  "engines": {
+    "node": ">=4"
+  },
   "author": "Rafael Rinaldi",
   "license": "MIT",
   "bugs": {
