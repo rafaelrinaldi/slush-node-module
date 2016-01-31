@@ -1,9 +1,10 @@
 'use strict';
 
-var <%= moduleVariable %> = require('./');
-var minimist = require('minimist');
-var multiline = require('multiline');
-var defaults = {
+const <%= moduleconstiable %> = require('./');
+const minimist = require('minimist');
+const version = require('./package.json').version;
+const multiline = require('multiline');
+const defaults = {
   boolean: [
     'help',
     'version'
@@ -13,10 +14,9 @@ var defaults = {
     v: 'version'
   }
 };
-var version = require('./package.json').version;
 
 /* eslint-disable */
-var help = multiline(function() {/*
+const help = multiline(function() {/*
 
 Usage: <%= moduleName %> [PATH] [OPTIONS]
 
@@ -40,35 +40,21 @@ exports.exitCode = 0;
 exports.stdout = process.stdout;
 exports.stderr = process.stderr;
 
-exports.parse = function(options) {
-  return minimist(options, defaults);
-};
+exports.parse = options => minimist(options, defaults);
 
-exports.run = function(argv) {
+exports.run = argv => {
   // Reset status code at each run
   exports.exitCode = 0;
 
-  if(argv.help) {
+  if (argv.help) {
     exports.stderr.write(help);
     return;
   }
 
-  if(argv.version) {
-    exports.stderr.write('<%= moduleName %> v' + version + '\n');
+  if (argv.version) {
+    exports.stderr.write(`hn-cli v${version}\n`);
     return;
   }
 
   run(argv);
 };
-
-function run(argv) {
-  <%= moduleVariable %>(argv);
-}
-
-function logError(error) {
-  var message = typeof error === 'string' ? error : error.message;
-
-  exports.exitCode = 1;
-
-  exports.stderr.write(message + '\n');
-}
