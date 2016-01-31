@@ -33,8 +33,7 @@
 <%= moduleKeywords %>
   ],<% if (hasCli) { %>
   "dependencies": {
-    "minimist": "^1.2.0",
-    "multiline": "^1.0.2"
+    "minimist": "^1.2.0"
   },<% } %>
   "devDependencies": {
     "tape": "^4.2.2",

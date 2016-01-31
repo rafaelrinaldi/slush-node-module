@@ -3,7 +3,6 @@
 const <%= moduleconstiable %> = require('./');
 const minimist = require('minimist');
 const version = require('./package.json').version;
-const multiline = require('multiline');
 const defaults = {
   boolean: [
     'help',
@@ -15,9 +14,7 @@ const defaults = {
   }
 };
 
-/* eslint-disable */
-const help = multiline(function() {/*
-
+const help = `
 Usage: <%= moduleName %> [PATH] [OPTIONS]
 
   <%= moduleDescription %>
@@ -28,10 +25,9 @@ Example:
 Options:
   -v --version              Display current software version.
   -h --help                 Display help and usage details.
+`;
 
-
-*/});
-/* eslint-enable */
+const run = argv => hn(argv);
 
 // Must be ≠ 0 if any errors occur during execution
 exports.exitCode = 0;
