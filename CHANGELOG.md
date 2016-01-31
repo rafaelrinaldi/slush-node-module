@@ -1,3 +1,17 @@
+# v2.2.0 (2016/01/31)
+
+* Big refactor to port everything to ES2015.
+* Custom Node.js engine for CLI apps that lock into version `>=4`.
+* Custom install instructions for CLI apps, suggesting the user to save it globally with `-g`.
+* Vim syntax highlighting for the binary file.
+* Better `.gitignore` file with patterns that actually make sense.
+* Locks [`xo`](https://github.com/sindresorhus/xo) into the latest version always (`*`).
+* Linter ES2015 support for CLI apps via `xo`'s `esnext` flag.
+* Uses [`tap-spec`](https://github.com/scottcorgan/tap-spec) for better test output.
+* Updates all outdated packages.
+* Removes Travis CI badge.
+* Improvements on the instructions file.
+
 # v1.3.0 (2015/08/25)
 
 * Only offers to add Bower if CLI is falsy.
