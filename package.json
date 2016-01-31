@@ -7,13 +7,14 @@
     "url": "git+https://github.com/rafaelrinaldi/slush-node-module.git"
   },
   "keywords": [
-    "slushgenerator",
-    "slush",
-    "node",
-    "module",
+    "boilerplate",
+    "cli",
     "generator",
+    "module",
+    "node",
     "scaffold",
-    "boilerplate"
+    "slush",
+    "slushgenerator"
   ],
   "engines": {
     "node": ">=4"
