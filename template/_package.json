@@ -17,7 +17,7 @@
     "<%= moduleName %>": "./bin/<%= moduleName %>"
   },<% } %>
   "engines": {
-    <% if (hasCli) { %>"node": ">=0.10.0"<% } else { %>"node": ">=4"<% } %>
+    <% if (hasCli) { %>"node": ">=4"<% } else { %>"node": ">=0.10.0"<% } %>
   },
   "xo": {
     <% if (hasCli) { %>"esnext": true,<% } %>
