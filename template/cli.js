@@ -1,6 +1,6 @@
 'use strict';
 
-const <%= moduleconstiable %> = require('./');
+const <%= moduleVariable %> = require('./');
 const minimist = require('minimist');
 const version = require('./package.json').version;
 const defaults = {
