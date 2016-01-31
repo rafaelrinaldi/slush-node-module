@@ -2,11 +2,11 @@
 
 > Scaffold a Node.js module with [Slush](http://slushjs.github.io)
 
+[![Dependencies Status](https://david-dm.org/rafaelrinaldi/slush-node-module.svg)](https://david-dm.org/rafaelrinaldi/slush-node-module)
+
 This is what I use for [my own modules](https://www.npmjs.com/~rafaelrinaldi).
 
 Inspired by [`generator-nm`](https://github.com/sindresorhus/generator-nm).
-
-[![Dependencies Status](https://david-dm.org/rafaelrinaldi/slush-node-module.svg)](https://david-dm.org/rafaelrinaldi/slush-node-module)
 
 ## Install
 
