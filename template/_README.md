@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-$ npm install <%= moduleName %> --save
+$ npm install <%= moduleName %> <% if (hasCli) { %>-g<% } else { %>--save<% } %>
 ```
 
 ## Usage
