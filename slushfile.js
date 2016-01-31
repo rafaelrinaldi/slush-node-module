@@ -38,7 +38,7 @@ let variables = {
    * a require for the npm manifest file in order to find out the software
    * version.
    **/
-  version: ''
+  version: '${version}'
 };
 
 gulp.task('git', ['bootstrap'], done => {
