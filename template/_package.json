@@ -19,7 +19,8 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "xo": {
+  "xo": {<% if (hasCli) { %>
+    "esnext": true,<% } %>
     "space": true,
     "rules": {
       "space-before-function-paren": [2, "never"]
