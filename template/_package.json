@@ -21,10 +21,7 @@
   },
   "xo": {
     <% if (hasCli) { %>"esnext": true,<% } %>
-    "space": true,
-    "rules": {
-      "space-before-function-paren": [2, "never"]
-    }
+    "space": true
   },
   "scripts": {
     "lint": "xo",
