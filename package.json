@@ -1,6 +1,6 @@
 {
   "name": "slush-node-module",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Scaffold a Node.js module with Slush",
   "repository": {
     "type": "git",
