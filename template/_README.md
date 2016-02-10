@@ -33,24 +33,24 @@ var <%= moduleVariable %> = require('<%= moduleName %>');
 
 ### `input`
 
-*Required*
-Type: `string`
+*Required*  
+Type: `string`  
 
 Lorem ipsum.
 
 ### `options`
 
-Type: `object`
+Type: `object`  
 
 Available options.
 
 ##### `options.option`
 
-Type: `boolean`
-Default: `false`
+Type: `boolean`  
+Default: `false`  
 
 Dolor Sit.<% } %>
 
 ## License
 
-MIT :copyright: [<%= authorName %>](<%= authorUrl %>)
+MIT © [<%= authorName %>](<%= authorUrl %>)
